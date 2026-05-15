@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
-    <title>Bereket Amare – Automation & AI Workflow Developer</title>
+    <title>Bereket Amare – Document & Data Collection Assistant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ── RESET & BASE ── */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +15,7 @@
 
         body {
             background: #eef2f6;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,45 +28,35 @@
             width: 100%;
             background: #ffffff;
             border-radius: 14px;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.08);
             overflow: hidden;
             display: grid;
             grid-template-columns: 34% 66%;
-            transition: all 0.2s;
         }
 
-        /* ── TOP HEADER (name, title, contact, photo) ── */
         .header-bar {
             grid-column: 1 / -1;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding: 32px 36px 18px 36px;
-            background: #ffffff;
             border-bottom: 1px solid #eef2f6;
             flex-wrap: wrap;
             gap: 16px;
-        }
-
-        .header-left {
-            flex: 1;
-            min-width: 200px;
         }
 
         .header-left h1 {
             font-size: 38px;
             font-weight: 800;
             color: #0b1a2a;
-            letter-spacing: -0.02em;
             line-height: 1.1;
-            margin-bottom: 2px;
         }
 
-        .header-left .subtitle {
+        .subtitle {
             font-size: 19px;
             font-weight: 500;
             color: #0ea5b0;
-            letter-spacing: -0.01em;
+            margin-top: 4px;
             margin-bottom: 12px;
         }
 
@@ -77,56 +66,41 @@
             gap: 12px 20px;
             font-size: 13px;
             color: #1e293b;
-            align-items: center;
         }
 
-        .contact-row .item {
+        .item {
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .contact-row .item i {
+        .item i {
             color: #0ea5b0;
-            font-size: 14px;
-            width: 18px;
-            text-align: center;
-        }
-
-        .contact-row .item a {
-            color: #1e293b;
-            text-decoration: none;
-        }
-
-        .contact-row .item a:hover {
-            color: #0ea5b0;
-        }
-
-        .header-right {
-            flex-shrink: 0;
         }
 
         .profile-photo {
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #0ea5b0, #38bdf8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 46px;
-            font-weight: 700;
-            color: #fff;
-            box-shadow: 0 6px 24px rgba(14, 165, 176, 0.25);
+            overflow: hidden;
             border: 4px solid #ffffff;
-            margin-top: 4px;
+            box-shadow: 0 6px 24px rgba(14,165,176,0.25);
         }
 
-        /* ── LEFT COLUMN ── */
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .sidebar {
             background: #fafbfc;
-            padding: 28px 28px 32px;
+            padding: 28px;
             border-right: 1px solid #eef2f6;
+        }
+
+        .main {
+            padding: 28px 32px;
         }
 
         .section-title {
@@ -140,7 +114,6 @@
             padding-bottom: 6px;
         }
 
-        /* Experience entries in sidebar */
         .exp-entry {
             margin-bottom: 22px;
         }
@@ -151,492 +124,233 @@
             color: #0b1a2a;
         }
 
-        .exp-entry .company {
+        .company {
             font-size: 13px;
             font-weight: 600;
             color: #0ea5b0;
         }
 
-        .exp-entry .meta {
+        .meta {
             font-size: 12px;
             color: #64748b;
-            margin: 2px 0 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .exp-entry .meta i {
-            color: #0ea5b0;
-            font-size: 11px;
+            margin: 4px 0;
         }
 
         .exp-entry p {
             font-size: 13px;
             color: #334155;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Skill tags (sidebar) */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 26px;
+            margin-bottom: 24px;
         }
 
         .skill-tags span {
             background: #ffffff;
             border: 1px solid #dce3ea;
-            padding: 4px 16px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 11.5px;
-            font-weight: 500;
             color: #1e293b;
         }
 
         .skill-tags span.highlight {
             background: #0ea5b0;
             border-color: #0ea5b0;
-            color: #fff;
-        }
-
-        /* Training / courses */
-        .course-item {
-            font-size: 13px;
-            color: #1e293b;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .course-item .title {
-            font-weight: 600;
-        }
-
-        .course-item .detail {
-            color: #475569;
-            font-size: 12.5px;
-        }
-
-        /* ── RIGHT COLUMN ── */
-        .main {
-            padding: 28px 32px 32px;
-            background: #ffffff;
+            color: #ffffff;
         }
 
         .profile-text {
             font-size: 14px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #1e293b;
             margin-bottom: 28px;
             background: #f8fafc;
-            padding: 16px 20px;
+            padding: 18px 20px;
             border-radius: 10px;
             border-left: 4px solid #0ea5b0;
         }
-        .profile-photo img {
-           width: 100%;
-           height: 100%;
-           object-fit: cover;
-           border-radius: 50%;
-           display: block;
-        }
 
-        /* Key Achievements */
         .achievement-item {
-            display: flex;
-            gap: 14px;
-            margin-bottom: 16px;
-            align-items: flex-start;
+            margin-bottom: 18px;
         }
 
-        .achievement-item .icon {
-            flex-shrink: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #e8f6f7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0ea5b0;
-            font-size: 14px;
-        }
-
-        .achievement-item .content strong {
+        .achievement-item strong {
             display: block;
-            font-size: 14px;
+            margin-bottom: 6px;
             color: #0b1a2a;
-            margin-bottom: 2px;
         }
 
-        .achievement-item .content span {
+        .achievement-item span {
             font-size: 13px;
             color: #475569;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Languages (right column) */
-        .lang-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 500;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .lang-item .dots {
-            display: flex;
-            gap: 3px;
-        }
-
-        .lang-item .dots span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #d1d9e2;
-        }
-
-        .lang-item .dots span.filled {
-            background: #0ea5b0;
-        }
-
-        /* Industry Expertise progress bars */
+        .lang-item,
         .expertise-item {
-            margin-bottom: 14px;
-        }
-
-        .expertise-item .label {
-            display: flex;
-            justify-content: space-between;
+            margin-bottom: 12px;
             font-size: 14px;
-            font-weight: 500;
             color: #1e293b;
-            margin-bottom: 3px;
         }
 
-        .expertise-item .bar-track {
-            width: 100%;
-            height: 6px;
-            background: #e2e8f0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+        @media(max-width:780px){
+            .resume{
+                grid-template-columns:1fr;
+            }
 
-        .expertise-item .bar-fill {
-            height: 100%;
-            border-radius: 8px;
-            background: #0ea5b0;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 780px) {
-            .resume {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                border-right: 0;
-                border-bottom: 1px solid #eef2f6;
-            }
-            .header-bar {
-                padding: 24px 20px 14px 20px;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .header-left {
-                text-align: center;
-            }
-            .header-left h1 {
-                font-size: 30px;
-            }
-            .header-left .subtitle {
-                font-size: 17px;
-            }
-            .contact-row {
-                justify-content: center;
-                font-size: 12.5px;
-                gap: 8px 16px;
-            }
-            .profile-photo {
-                width: 110px;
-                height: 110px;
-                font-size: 36px;
-                margin-top: 0;
-            }
-            .main {
-                padding: 22px 20px 28px;
-            }
-            .sidebar {
-                padding: 22px 20px 26px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-left h1 {
-                font-size: 26px;
-            }
-            .contact-row {
-                font-size: 11.5px;
-                gap: 6px 10px;
-            }
-            .contact-row .item i {
-                font-size: 12px;
-                width: 14px;
-            }
-            .profile-photo {
-                width: 90px;
-                height: 90px;
-                font-size: 28px;
-            }
-            .resume {
-                border-radius: 8px;
-            }
-        }
-
-        /* ── PRINT ── */
-        @media print {
-            body {
-                background: #fff;
-                padding: 0;
-            }
-            .resume {
-                border-radius: 0;
-                box-shadow: none;
-                max-width: 100%;
-            }
-            .profile-photo {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .skill-tags span.highlight {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .achievement-item .icon {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .profile-text {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .lang-item .dots span.filled {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .expertise-item .bar-fill {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .expertise-item .bar-track {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .section-title {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            .sidebar{
+                border-right:none;
+                border-bottom:1px solid #eef2f6;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="resume">
+<div class="resume">
 
-        <!-- ====== HEADER BAR (name, title, contact, photo) ====== -->
-        <div class="header-bar">
+    <div class="header-bar">
 
-            <div class="header-left">
-                <h1>BEREKET AMARE</h1>
-                <div class="subtitle">Automation &amp; AI Workflow Developer</div>
-                <div class="contact-row">
-                    <span class="item"><i class="fas fa-phone-alt"></i> 0978494843</span>
-                    <span class="item"><i class="fas fa-envelope"></i> Bereketamare0043@gmail.com</span>
-                    <span class="item"><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                </div>
+        <div class="header-left">
+            <h1>BEREKET AMARE</h1>
+            <div class="subtitle">Document &amp; Data Collection Assistant</div>
+
+            <div class="contact-row">
+                <span class="item"><i class="fas fa-phone-alt"></i> 0978494843</span>
+                <span class="item"><i class="fas fa-envelope"></i> Bereketamare0043@gmail.com</span>
+                <span class="item"><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
             </div>
-
-            <div class="header-right">
-                  <div class="profile-photo">
-                       <img src="beki.jpg" alt="Bereket Amare" />
-                  </div>
-            </div>
-
         </div>
 
-        <!-- ====== LEFT COLUMN ====== -->
-        <div class="sidebar">
-
-            <!-- EXPERIENCE -->
-            <div class="section-title">Experience</div>
-
-            <div class="exp-entry">
-                <h3>AI Automation Developer</h3>
-                <div class="company">Freelance / Independent</div>
-                <div class="meta"><i class="far fa-calendar-alt"></i> 2024 – Present</div>
-                <p>Developed multiple AI-powered automation systems using Python and n8n. Built multilingual document and email translation automation systems.</p>
-            </div>
-
-            <div class="exp-entry">
-                <h3>Backend &amp; Workflow Engineer</h3>
-                <div class="company">Contract Projects</div>
-                <div class="meta"><i class="far fa-calendar-alt"></i> 2023 – 2024</div>
-                <p>Designed automation pipelines involving Telegram, APIs, AI tools, and cloud services. Worked on backend system design and workflow integrations.</p>
-            </div>
-
-            <div class="exp-entry">
-                <h3>Automation &amp; AI Systems Developer</h3>
-                <div class="company">Self-Employed</div>
-                <div class="meta"><i class="far fa-calendar-alt"></i> 2023 – Present</div>
-                <p>Created intelligent workflow systems for data collection, content automation, and AI-driven reporting. Built Telegram bots and social media automation pipelines.</p>
-            </div>
-
-            <!-- EDUCATION -->
-            <div class="section-title" style="margin-top: 6px;">Education</div>
-
-            <div class="exp-entry">
-                <h3>Bachelor of Science (BSc) in Statistics</h3>
-                <div class="company">Dire Dawa University</div>
-                <div class="meta"><i class="far fa-calendar-alt"></i> Graduated: March 2026</div>
-            </div>
-
-            <!-- SKILLS -->
-            <div class="section-title" style="margin-top: 6px;">Skills</div>
-
-            <div class="skill-tags">
-                <span class="highlight">Python</span>
-                <span>n8n</span>
-                <span>Flask</span>
-                <span>AI Automation</span>
-                <span>Telegram Bot</span>
-                <span>REST APIs</span>
-                <span>Google Sheets</span>
-                <span>Prompt Eng.</span>
-                <span>Database</span>
-                <span>Excel</span>
-                <span>GitHub</span>
-                <span>VS Code</span>
-            </div>
-
-            <!-- TRAINING / COURSES -->
-            <div class="section-title">Training / Courses</div>
-
-            <div class="course-item">
-                <div class="title">AI &amp; Automation Masterclass</div>
-                <div class="detail">Workflow design with n8n · OpenAI API integration · Telegram bot development</div>
-            </div>
-
-            <div class="course-item">
-                <div class="title">Flask Backend Development</div>
-                <div class="detail">REST APIs · Database integration · Scalable system architecture</div>
-            </div>
-
-            <div class="course-item">
-                <div class="title">Prompt Engineering &amp; AI Workflows</div>
-                <div class="detail">Advanced prompt design · LLM integration · Automation pipelines</div>
-            </div>
-
-        </div>
-
-        <!-- ====== RIGHT COLUMN ====== -->
-        <div class="main">
-
-            <!-- SUMMARY -->
-            <div class="section-title">Summary</div>
-
-            <div class="profile-text">
-                Motivated and highly skilled Statistics graduate with hands-on experience in AI automation, workflow systems, Telegram bot development, and backend application development. Strong ability to build scalable digital systems using Python, Flask, APIs, and n8n automation platforms. Passionate about solving real-world business challenges through automation and modern technology solutions.
-            </div>
-
-            <!-- KEY ACHIEVEMENTS -->
-            <div class="section-title">Key Achievements</div>
-
-            <div class="achievement-item">
-                <div class="icon"><i class="fas fa-bolt"></i></div>
-                <div class="content">
-                    <strong>AI English Teacher Telegram Bot</strong>
-                    <span>Built an AI-powered learning assistant with voice processing, translation support, and automated conversation management using n8n workflows.</span>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="icon"><i class="fas fa-bolt"></i></div>
-                <div class="content">
-                    <strong>Automated School Management System</strong>
-                    <span>Created an intelligent workflow for student data collection, AI-driven performance analysis, and automated daily reports via Telegram and email.</span>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="icon"><i class="fas fa-bolt"></i></div>
-                <div class="content">
-                    <strong>TikTok to YouTube Automation</strong>
-                    <span>Developed an automation workflow that identifies viral TikTok content, processes videos, and reposts to YouTube with scheduling and media pipelines.</span>
-                </div>
-            </div>
-
-            <!-- LANGUAGES -->
-            <div class="section-title" style="margin-top: 6px;">Languages</div>
-
-            <div class="lang-item">
-                <span>Amharic</span>
-                <div class="dots">
-                    <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
-                </div>
-            </div>
-
-            <div class="lang-item">
-                <span>English</span>
-                <div class="dots">
-                    <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
-                </div>
-            </div>
-
-            <div class="lang-item">
-                <span>Afaan Oromo</span>
-                <div class="dots">
-                    <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
-                </div>
-            </div>
-
-            <!-- INDUSTRY EXPERTISE (progress bars) -->
-            <div class="section-title" style="margin-top: 10px;">Industry Expertise</div>
-
-            <div class="expertise-item">
-                <div class="label"><span>AI Automation &amp; n8n</span><span>95%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:95%;"></div></div>
-            </div>
-
-            <div class="expertise-item">
-                <div class="label"><span>Python &amp; Flask Backend</span><span>88%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:88%;"></div></div>
-            </div>
-
-            <div class="expertise-item">
-                <div class="label"><span>Telegram Bot &amp; API Integration</span><span>90%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:90%;"></div></div>
-            </div>
-
-            <div class="expertise-item">
-                <div class="label"><span>Workflow Design &amp; Automation</span><span>92%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:92%;"></div></div>
-            </div>
-
-            <div class="expertise-item">
-                <div class="label"><span>Google Sheets &amp; Data Processing</span><span>85%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
-            </div>
-
-            <!-- REFERENCES -->
-            
+        <div class="profile-photo">
+            <img src="beki.jpg" alt="Bereket Amare" />
         </div>
 
     </div>
+
+    <div class="sidebar">
+
+        <div class="section-title">Experience</div>
+
+        <div class="exp-entry">
+            <h3>Data Collection &amp; Digital Workflow Assistant</h3>
+            <div class="company">Freelance / Independent Projects</div>
+            <div class="meta">2024 – Present</div>
+            <p>
+                Managed and organized digital information using Google Sheets, Excel, and workflow systems. Collected and processed project data while maintaining accurate records and structured reporting systems.
+            </p>
+        </div>
+
+        <div class="exp-entry">
+            <h3>AI Automation &amp; Workflow Developer</h3>
+            <div class="company">Self-Employed</div>
+            <div class="meta">2023 – Present</div>
+            <p>
+                Built systems for collecting and organizing educational and business data. Developed workflow tools for efficient information processing and reporting.
+            </p>
+        </div>
+
+        <div class="exp-entry">
+            <h3>Backend &amp; Digital Systems Assistant</h3>
+            <div class="company">Contract Projects</div>
+            <div class="meta">2023 – 2024</div>
+            <p>
+                Assisted with digital reporting systems, spreadsheet organization, and technical coordination for workflow management projects.
+            </p>
+        </div>
+
+        <div class="section-title">Education</div>
+
+        <div class="exp-entry">
+            <h3>Bachelor of Science (BSc) in Statistics</h3>
+            <div class="company">Dire Dawa University</div>
+            <div class="meta">Graduated: March 2026</div>
+        </div>
+
+        <div class="section-title">Skills</div>
+
+        <div class="skill-tags">
+            <span class="highlight">Data Collection</span>
+            <span>Excel</span>
+            <span>Google Sheets</span>
+            <span>Computer Skills</span>
+            <span>Communication</span>
+            <span>Problem Solving</span>
+            <span>Data Analysis</span>
+            <span>Digital Literacy</span>
+            <span>Teamwork</span>
+            <span>Documentation</span>
+            <span>Adaptability</span>
+            <span>Python</span>
+        </div>
+
+        <div class="section-title">Training / Courses</div>
+
+        <div class="exp-entry">
+            <h3>Digital Data Management</h3>
+            <p>Spreadsheet management · Data organization · Workflow systems</p>
+        </div>
+
+        <div class="exp-entry">
+            <h3>Computer &amp; Technology Skills</h3>
+            <p>Digital tools · File management · Online communication</p>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="section-title">Professional Summary</div>
+
+        <div class="profile-text">
+            Motivated and detail-oriented Statistics graduate with strong computer skills and practical experience in digital systems, data collection, workflow management, and information organization. Experienced in using spreadsheets, automation tools, and online platforms to collect, process, and manage data efficiently. Strong communication skills, adaptability, and problem-solving ability with a positive attitude toward teamwork and continuous learning.
+        </div>
+
+        <div class="section-title">Key Achievements</div>
+
+        <div class="achievement-item">
+            <strong>Automated School Reporting Workflow</strong>
+            <span>
+                Developed a digital workflow system for collecting student information, processing reports, and organizing educational data efficiently.
+            </span>
+        </div>
+
+        <div class="achievement-item">
+            <strong>AI-Powered Data Processing Systems</strong>
+            <span>
+                Built automation systems that gather and structure information using spreadsheets, APIs, and workflow tools.
+            </span>
+        </div>
+
+        <div class="achievement-item">
+            <strong>Telegram Information Management Bot</strong>
+            <span>
+                Created bots capable of receiving, organizing, and processing user-submitted information automatically.
+            </span>
+        </div>
+
+        <div class="section-title">Languages</div>
+
+        <div class="lang-item">Amharic — Native</div>
+        <div class="lang-item">English — Professional</div>
+        <div class="lang-item">Afaan Oromo — Professional</div>
+
+        <div class="section-title">Industry Expertise</div>
+
+        <div class="expertise-item">Data Collection &amp; Management — 92%</div>
+        <div class="expertise-item">Digital &amp; Computer Literacy — 95%</div>
+        <div class="expertise-item">Communication &amp; Teamwork — 90%</div>
+        <div class="expertise-item">Spreadsheet &amp; Reporting Tools — 88%</div>
+        <div class="expertise-item">Problem Solving &amp; Adaptability — 91%</div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
