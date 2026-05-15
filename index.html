@@ -1,248 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bereket Amare - UNDP Internship CV</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
 body{
-background:#eef2f6;
-font-family:'Inter',sans-serif;
-padding:30px;
-display:flex;
-justify-content:center;
+    background:#eef2f6;
+    font-family:'Inter',sans-serif;
+    padding:30px 16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
+
 .resume{
-max-width:1000px;
-width:100%;
-background:#fff;
-border-radius:14px;
-overflow:hidden;
-box-shadow:0 12px 48px rgba(0,0,0,0.08);
-display:grid;
-grid-template-columns:34% 66%;
+    max-width:1000px;
+    width:100%;
+    background:#ffffff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 12px 48px rgba(0,0,0,0.08);
+    display:grid;
+    grid-template-columns:34% 66%;
 }
+
+/* ================= HEADER ================= */
+
 .header-bar{
-grid-column:1/-1;
-display:flex;
-justify-content:space-between;
-padding:32px 36px 18px;
-border-bottom:1px solid #eef2f6;
+    grid-column:1/-1;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:32px 36px 20px;
+    border-bottom:1px solid #eef2f6;
+    flex-wrap:wrap;
+    gap:20px;
 }
+
+.header-left{
+    flex:1;
+    min-width:240px;
+}
+
 .header-left h1{
-font-size:38px;
-font-weight:800;
-color:#0b1a2a;
+    font-size:38px;
+    font-weight:800;
+    color:#0b1a2a;
+    line-height:1.1;
 }
+
 .subtitle{
-font-size:18px;
-color:#0ea5b0;
-margin-top:6px;
-margin-bottom:12px;
+    font-size:18px;
+    font-weight:500;
+    color:#0ea5b0;
+    margin-top:6px;
+    margin-bottom:14px;
 }
+
 .contact-row{
-display:flex;
-flex-wrap:wrap;
-gap:12px 20px;
-font-size:13px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 20px;
+    font-size:13px;
+    color:#1e293b;
 }
+
+.contact-row span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.contact-row i{
+    color:#0ea5b0;
+}
+
+/* ================= PHOTO ================= */
+
 .profile-photo{
-width:130px;
-height:130px;
-border-radius:50%;
-overflow:hidden;
-border:4px solid white;
-box-shadow:0 6px 24px rgba(14,165,176,0.25);
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #ffffff;
+    box-shadow:0 6px 24px rgba(14,165,176,0.25);
+    flex-shrink:0;
 }
+
 .profile-photo img{
-width:100%;
-height:100%;
-object-fit:cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
+
+/* ================= SIDEBAR ================= */
+
 .sidebar{
-background:#fafbfc;
-padding:28px;
-border-right:1px solid #eef2f6;
+    background:#fafbfc;
+    padding:28px;
+    border-right:1px solid #eef2f6;
 }
+
+/* ================= MAIN ================= */
+
 .main{
-padding:28px 32px;
+    padding:28px 32px;
 }
+
+/* ================= SECTION TITLE ================= */
+
 .section-title{
-font-size:13px;
-font-weight:700;
-text-transform:uppercase;
-letter-spacing:0.06em;
-color:#0ea5b0;
-margin-bottom:14px;
-border-bottom:2px solid #0ea5b030;
-padding-bottom:6px;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:#0ea5b0;
+    margin-bottom:14px;
+    border-bottom:2px solid rgba(14,165,176,0.18);
+    padding-bottom:6px;
 }
+
+/* ================= EXPERIENCE ================= */
+
 .exp-entry{
-margin-bottom:22px;
+    margin-bottom:22px;
 }
+
 .exp-entry h3{
-font-size:15px;
-font-weight:700;
-color:#0b1a2a;
+    font-size:15px;
+    font-weight:700;
+    color:#0b1a2a;
+    margin-bottom:3px;
 }
+
 .company{
-font-size:13px;
-font-weight:600;
-color:#0ea5b0;
+    font-size:13px;
+    font-weight:600;
+    color:#0ea5b0;
 }
+
 .meta{
-font-size:12px;
-color:#64748b;
-margin:4px 0;
+    font-size:12px;
+    color:#64748b;
+    margin:4px 0 8px;
 }
+
 .exp-entry p{
-font-size:13px;
-line-height:1.6;
-color:#334155;
+    font-size:13px;
+    line-height:1.6;
+    color:#334155;
 }
+
+/* ================= SKILLS ================= */
+
 .skill-tags{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
 }
+
 .skill-tags span{
-background:#fff;
-border:1px solid #dce3ea;
-padding:5px 14px;
-border-radius:20px;
-font-size:11.5px;
+    background:#ffffff;
+    border:1px solid #dce3ea;
+    padding:5px 14px;
+    border-radius:20px;
+    font-size:11.5px;
+    color:#1e293b;
 }
+
 .skill-tags .highlight{
-background:#0ea5b0;
-color:white;
-border-color:#0ea5b0;
+    background:#0ea5b0;
+    color:#ffffff;
+    border-color:#0ea5b0;
 }
+
+/* ================= SUMMARY ================= */
+
 .profile-text{
-font-size:14px;
-line-height:1.8;
-background:#f8fafc;
-padding:18px 20px;
-border-radius:10px;
-border-left:4px solid #0ea5b0;
-margin-bottom:28px;
-color:#1e293b;
+    font-size:14px;
+    line-height:1.8;
+    background:#f8fafc;
+    padding:18px 20px;
+    border-radius:10px;
+    border-left:4px solid #0ea5b0;
+    margin-bottom:28px;
+    color:#1e293b;
 }
+
+/* ================= ACHIEVEMENTS ================= */
+
 .achievement-item{
-margin-bottom:18px;
+    margin-bottom:20px;
 }
+
 .achievement-item strong{
-display:block;
-margin-bottom:6px;
-color:#0b1a2a;
+    display:block;
+    margin-bottom:6px;
+    color:#0b1a2a;
+    font-size:14px;
 }
+
 .achievement-item span{
-font-size:13px;
-line-height:1.6;
-color:#475569;
+    font-size:13px;
+    line-height:1.7;
+    color:#475569;
 }
-.lang-item,.expertise-item{
-margin-bottom:12px;
-font-size:14px;
+
+/* ================= LANGUAGES ================= */
+
+.lang-item{
+    margin-bottom:12px;
+    font-size:14px;
+    color:#1e293b;
+}
+
+/* ================= EXPERTISE ================= */
+
+.expertise-item{
+    margin-bottom:12px;
+    font-size:14px;
+    color:#334155;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:780px){
+
+    .resume{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        border-right:none;
+        border-bottom:1px solid #eef2f6;
+    }
+
+    .header-bar{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .contact-row{
+        justify-content:center;
+    }
+
+    .main{
+        padding:24px 20px;
+    }
+
+    .sidebar{
+        padding:24px 20px;
+    }
+
+    .header-left h1{
+        font-size:30px;
+    }
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    body{
+        background:#ffffff;
+        padding:0;
+    }
+
+    .resume{
+        box-shadow:none;
+        border-radius:0;
+        max-width:100%;
+    }
 }
 </style>
 </head>
+
 <body>
+
 <div class="resume">
-<div class="header-bar">
-<div class="header-left">
-<h1>BEREKET AMARE</h1>
-<div class="subtitle">Data Analytics & Digital Innovation Intern</div>
-<div class="contact-row">
-<span><i class="fas fa-phone-alt"></i> 0978494843</span>
-<span><i class="fas fa-envelope"></i> Bereketamare0043@gmail.com</span>
-<span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header-bar">
+
+        <div class="header-left">
+
+            <h1>BEREKET AMARE</h1>
+
+            <div class="subtitle">
+                Data Analytics & Digital Innovation Intern
+            </div>
+
+            <div class="contact-row">
+
+                <span>
+                    <i class="fas fa-phone-alt"></i>
+                    0978494843
+                </span>
+
+                <span>
+                    <i class="fas fa-envelope"></i>
+                    Bereketamare0043@gmail.com
+                </span>
+
+                <span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Addis Ababa, Ethiopia
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="profile-photo">
+            <img src="beki.jpg" alt="Bereket Amare" />
+        </div>
+
+    </div>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div class="section-title">Education</div>
+
+        <div class="exp-entry">
+            <h3>Bachelor of Science (BSc) in Statistics</h3>
+
+            <div class="company">Dire Dawa University</div>
+
+            <div class="meta">Graduated: March 2026</div>
+
+            <p>
+                Focused on statistics, research methods, data analysis,
+                and information management systems.
+            </p>
+        </div>
+
+        <div class="section-title">Experience</div>
+
+        <div class="exp-entry">
+            <h3>AI & Digital Systems Developer</h3>
+
+            <div class="company">
+                Freelance / Independent Projects
+            </div>
+
+            <div class="meta">2023 – Present</div>
+
+            <p>
+                Developed workflow automation systems and digital tools
+                for reporting, data collection, and information processing
+                using spreadsheets, APIs, and automation platforms.
+            </p>
+        </div>
+
+        <div class="exp-entry">
+            <h3>Data & Workflow Assistant</h3>
+
+            <div class="company">Contract Projects</div>
+
+            <div class="meta">2024 – Present</div>
+
+            <p>
+                Supported digital data organization, reporting workflows,
+                and system coordination while maintaining accurate project
+                documentation and communication.
+            </p>
+        </div>
+
+        <div class="section-title">Skills</div>
+
+        <div class="skill-tags">
+
+            <span class="highlight">Excel</span>
+            <span>Google Sheets</span>
+            <span>Data Analysis</span>
+            <span>Research</span>
+            <span>Python</span>
+            <span>AI Tools</span>
+            <span>Communication</span>
+            <span>Digital Innovation</span>
+            <span>Problem Solving</span>
+            <span>Documentation</span>
+            <span>Reporting</span>
+            <span>Teamwork</span>
+            <span>Power BI</span>
+            <span>n8n</span>
+
+        </div>
+
+        <div class="section-title" style="margin-top:22px;">
+            Languages
+        </div>
+
+        <div class="lang-item">Amharic — Native</div>
+        <div class="lang-item">English — Professional</div>
+        <div class="lang-item">Afaan Oromo — Professional</div>
+
+    </div>
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="main">
+
+        <div class="section-title">
+            Professional Summary
+        </div>
+
+        <div class="profile-text">
+
+            Motivated Statistics graduate with strong interest in
+            digital innovation, operational data analytics,
+            AI systems, and development-focused technology solutions.
+
+            Experienced in building workflow automation systems,
+            data collection platforms, and reporting tools using
+            modern digital technologies.
+
+            Skilled in research, communication, analytical thinking,
+            and collaborative problem solving.
+
+            Passionate about supporting sustainable development
+            initiatives through technology, data, and innovation.
+
+        </div>
+
+        <div class="section-title">
+            Key Projects & Achievements
+        </div>
+
+        <div class="achievement-item">
+
+            <strong>
+                AI-Powered School Reporting System
+            </strong>
+
+            <span>
+                Developed a workflow system for collecting student
+                performance data, generating reports, and automating
+                communication through digital platforms.
+            </span>
+
+        </div>
+
+        <div class="achievement-item">
+
+            <strong>
+                Digital Workflow Automation Projects
+            </strong>
+
+            <span>
+                Built automation systems integrating spreadsheets,
+                APIs, Telegram bots, and cloud tools for efficient
+                information processing and reporting.
+            </span>
+
+        </div>
+
+        <div class="achievement-item">
+
+            <strong>
+                AI Translation & Information Management Tools
+            </strong>
+
+            <span>
+                Created multilingual digital systems for document
+                processing, translation support, and workflow
+                management.
+            </span>
+
+        </div>
+
+        <div class="section-title">
+            Areas of Interest
+        </div>
+
+        <div class="expertise-item">
+            Operational Data Analytics & Digitalization
+        </div>
+
+        <div class="expertise-item">
+            AI University Innovation Pod
+        </div>
+
+        <div class="expertise-item">
+            Monitoring & Evaluation
+        </div>
+
+        <div class="expertise-item">
+            Knowledge Management
+        </div>
+
+        <div class="expertise-item">
+            Communication & Digital Innovation
+        </div>
+
+        <div class="section-title" style="margin-top:18px;">
+            Core Competencies
+        </div>
+
+        <div class="expertise-item">
+            Research & Analytical Thinking
+        </div>
+
+        <div class="expertise-item">
+            Digital Innovation & Automation
+        </div>
+
+        <div class="expertise-item">
+            Data Collection & Reporting
+        </div>
+
+        <div class="expertise-item">
+            Documentation & Communication
+        </div>
+
+        <div class="expertise-item">
+            Team Collaboration & Adaptability
+        </div>
+
+    </div>
+
 </div>
-</div>
-<div class="profile-photo">
-<img src="beki.jpg" alt="Bereket Amare">
-</div>
-</div>
-<div class="sidebar">
-<div class="section-title">Education</div>
-<div class="exp-entry">
-<h3>Bachelor of Science (BSc) in Statistics</h3>
-<div class="company">Dire Dawa University</div>
-<div class="meta">Graduated: March 2026</div>
-<p>Focused on statistics, research methods, data analysis, and information management systems.</p>
-</div>
-<div class="section-title">Experience</div>
-<div class="exp-entry">
-<h3>AI & Digital Systems Developer</h3>
-<div class="company">Freelance / Independent Projects</div>
-<div class="meta">2023 – Present</div>
-<p>Developed workflow automation systems and digital tools for reporting, data collection, and information processing using spreadsheets, APIs, and automation platforms.</p>
-</div>
-<div class="exp-entry">
-<h3>Data & Workflow Assistant</h3>
-<div class="company">Contract Projects</div>
-<div class="meta">2024 – Present</div>
-<p>Supported digital data organization, reporting workflows, and system coordination while maintaining accurate project documentation and communication.</p>
-</div>
-<div class="section-title">Skills</div>
-<div class="skill-tags">
-<span class="highlight">Excel</span>
-<span>Google Sheets</span>
-<span>Data Analysis</span>
-<span>Research</span>
-<span>Python</span>
-<span>AI Tools</span>
-<span>Communication</span>
-<span>Digital Innovation</span>
-<span>Problem Solving</span>
-<span>Documentation</span>
-<span>Reporting</span>
-<span>Teamwork</span>
-<span>Power BI</span>
-<span>n8n</span>
-</div>
-<div class="section-title" style="margin-top:20px;">Languages</div>
-<div class="lang-item">Amharic — Native</div>
-<div class="lang-item">English — Professional</div>
-<div class="lang-item">Afaan Oromo — Professional</div>
-</div>
-<div class="main">
-<div class="section-title">Professional Summary</div>
-<div class="profile-text">
-Motivated Statistics graduate with strong interest in digital innovation, operational data analytics, AI systems, and development-focused technology solutions. Experienced in building workflow automation systems, data collection platforms, and reporting tools using modern digital technologies. Skilled in research, communication, analytical thinking, and collaborative problem solving. Passionate about supporting sustainable development initiatives through technology, data, and innovation.
-</div>
-<div class="section-title">Key Projects & Achievements</div>
-<div class="achievement-item">
-<strong>AI-Powered School Reporting System</strong>
-<span>Developed a workflow system for collecting student performance data, generating reports, and automating communication through digital platforms.</span>
-</div>
-<div class="achievement-item">
-<strong>Digital Workflow Automation Projects</strong>
-<span>Built automation systems integrating spreadsheets, APIs, Telegram bots, and cloud tools for efficient information processing and reporting.</span>
-</div>
-<div class="achievement-item">
-<strong>AI Translation & Information Management Tools</strong>
-<span>Created multilingual digital systems for document processing, translation support, and workflow management.</span>
-</div>
-<div class="section-title">Areas of Interest</div>
-<div class="expertise-item">Operational Data Analytics & Digitalization</div>
-<div class="expertise-item">AI University Innovation Pod</div>
-<div class="expertise-item">Monitoring & Evaluation</div>
-<div class="expertise-item">Knowledge Management</div>
-<div class="expertise-item">Communication & Digital Innovation</div>
-<div class="section-title" style="margin-top:18px;">Core Competencies</div>
-<div class="expertise-item">Research & Analytical Thinking</div>
-<div class="expertise-item">Digital Innovation & Automation</div>
-<div class="expertise-item">Data Collection & Reporting</div>
-<div class="expertise-item">Documentation & Communication</div>
-<div class="expertise-item">Team Collaboration & Adaptability</div>
-</div>
-</div>
+
 </body>
 </html>
